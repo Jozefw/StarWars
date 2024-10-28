@@ -7,7 +7,7 @@ const baseUrl = "https://swapi-node.vercel.app";
 const initialUrl = baseUrl + "/api/people/";
 
 const fetchUrl = async (url) => {
-  const response = await fetch(url);
+const response = await fetch(url);
     return response.json();
 };
 
@@ -36,8 +36,7 @@ if (isError) {
 return (
     <>
     {isFetching && <div className="loading">Loading...</div>}
-    <InfiniteScroll initialLoad={false} loadMore={() => {if (!isFetching) {fetchNextPage();}
-        }}
+    <InfiniteScroll initialLoad={false} loadMore={() => {if (!isFetching) {fetchNextPage();} }}
         hasMore={hasNextPage}>
         {data.pages.map((pageData) => {
         return pageData.results.map((person) => {
